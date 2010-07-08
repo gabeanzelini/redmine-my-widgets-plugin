@@ -1,10 +1,28 @@
 <h3>Messages Posted in the Last Week</h3>
 <%
-  @messages = Message.find(:all, :conditions => ["created_on >= ?",1.week.ago])
+  @messages = Message.find( :all, 
+                            :conditions => ["created_on >= ?",1.week.ago], 
+                            :include => [:author, :project, :subject, :updated_at], 
+                            :order => 'updated_at DESC')
 %>
 
-<ul>
-<% @messages.each do |msg| %>
-  <li><%= link_to msg.subject, "/boards/#{msg.board.id}/topics/#{msg.id}" %></li>
-<% end %>
-</ul>
+<table class="list messages">		
+	<thead>
+	  <tr>
+		  <th>Project</th>
+  		<th>Subject</th>
+  		<th>Author</th>
+		</tr>
+	</thead>
+	<tbody>	
+		<% @message.each do |msg| %>
+		<tr id="message-#{msg.id}" class="">
+			<td class="project">
+			  <%= link_to msg.project.name, :controller => 'project', :action => 'show', :id => msg.project.id %>
+			</td>
+			<td class="subject"><%= link_to msg.subject, "/boards/#{msg.board.id}/topics/#{msg.id}" %></td>
+			<td class="author"><%= msg.author.name %> </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
