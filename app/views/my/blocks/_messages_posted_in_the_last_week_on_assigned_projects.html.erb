@@ -1,6 +1,6 @@
 <h3>Messages Posted in the Last Week</h3>
 <%
-  @messages = Message.find(:all, :condition => ["created_on >= #{1.week.ago}"])
+  @messages = Message.find(:all, :conditions => ["created_on >= #{1.week.ago}"])
 %>
 
 <ul>
