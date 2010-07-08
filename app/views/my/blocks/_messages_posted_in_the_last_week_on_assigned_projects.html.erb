@@ -5,6 +5,6 @@
 
 <ul>
 <% @messages.each do |msg| %>
-  <li><%= msg.subject %></li>
+  <li><%= link_to msg.subject, message_path [msg, msg.board] %></li>
 <% end %>
 </ul>
