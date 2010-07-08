@@ -1,0 +1,5 @@
+<%    
+    Message.all.collect do |msg|
+      msg.Project.members.include? User.current
+    end
+%>
