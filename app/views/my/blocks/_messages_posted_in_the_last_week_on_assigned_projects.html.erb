@@ -2,7 +2,6 @@
 <%
   @messages = Message.find( :all, 
                             :conditions => ["created_on >= ?",1.week.ago], 
-                            :include => [:author, :project, :subject, :updated_on], 
                             :order => 'updated_on DESC')
 %>
 
