@@ -14,7 +14,7 @@
 		</tr>
 	</thead>
 	<tbody>	
-		<% @message.each do |msg| %>
+		<% @messages.each do |msg| %>
 		<tr id="message-#{msg.id}" class="">
 			<td class="project">
 			  <%= link_to msg.project.name, :controller => 'project', :action => 'show', :id => msg.project.id %>
