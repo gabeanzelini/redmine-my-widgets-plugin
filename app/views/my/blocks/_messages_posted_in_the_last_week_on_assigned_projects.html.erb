@@ -1,1 +1,10 @@
 <h3>Messages Posted in the Last Week</h3>
+<%
+  @messages = Message.all
+%>
+
+<ul>
+<% @messages.each do |msg| %>
+  <li><%= msg.subject %></li>
+<% end %>
+</ul>
