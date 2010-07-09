@@ -32,3 +32,7 @@
 	</tbody>
 </table>
 <% end %>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'my_widgets', :plugin => 'redmine_my_widgets' %>
+<% end %>
