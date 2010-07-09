@@ -10,6 +10,7 @@
 <table class="list messages">		
 	<thead>
 	  <tr>
+	    <th>Updated At</th>
 		  <th>Project</th>
   		<th>Subject</th>
   		<th>Author</th>
@@ -18,6 +19,9 @@
 	<tbody>	
 		<% @messages.each do |msg| %>
 		<tr id="message-<%=msg.id%>" class="<%= cycle('odd', 'even') %>">
+		  <td class="updated-at">
+		    <%= format_date(msg.updated_on)%>
+	    </td>
 			<td class="project">
 			  <%= link_to msg.project.name, :controller => 'project', :action => 'show', :id => msg.project.id %>
 			</td>
