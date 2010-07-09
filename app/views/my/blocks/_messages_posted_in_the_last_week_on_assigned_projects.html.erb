@@ -22,7 +22,7 @@
 		<% @messages.each do |msg| %>
 		<tr id="message-<%=msg.id%>" class="<%= cycle('odd', 'even') %>">
 		  <td class="updated-at">
-		    <%= format_date(msg.updated_on)%>
+		    <%= format_time(msg.updated_on)%>
 	    </td>
 			<td class="project">
 			  <%= link_to msg.project.name, :controller => 'project', :action => 'show', :id => msg.project.id %>
