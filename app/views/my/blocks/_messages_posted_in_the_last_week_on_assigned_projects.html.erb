@@ -1,6 +1,7 @@
 <%
   boards = User.current.projects.collect{|proj| proj.boards.collect{|board| board.id}.join(",") }.join(",")
   @messages = Message.find( :all, 
+                            :include => [:boards, :author]
                             :conditions => ["created_on >= ? and board_id in (?)",1.week.ago, boards], 
                             :order => 'updated_on DESC')
 %>
@@ -16,7 +17,7 @@
 	</thead>
 	<tbody>	
 		<% @messages.each do |msg| %>
-		<tr id="message-#{msg.id}" class="<%= cycle('odd', 'even') %>">
+		<tr id="message-<%=msg.id%>" class="<%= cycle('odd', 'even') %>">
 			<td class="project">
 			  <%= link_to msg.project.name, :controller => 'project', :action => 'show', :id => msg.project.id %>
 			</td>
