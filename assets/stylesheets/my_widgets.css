@@ -6,7 +6,4 @@ table.list td.progress-cell { white-space: nowrap; padding-right: 2.5em; }
 .cloud a { white-space: nowrap; margin: 0.5em; }
 
 
-table.messages td.project, table.messages td.author
-{
-	text-align: center;
-}
+table.messages td.project, table.messages td.author{text-align: center;}
