@@ -1,7 +1,7 @@
 <%
   boards = User.current.projects.collect do |proj| 
       proj.boards.collect{|board| board.id}.select{|num| num.to_s.match(/^\d+$/) }.join(",") 
-    end.join(",")
+    end.reject{|ids| ids.nil? or ids.empty? }.join(",")
   @messages = Message.find( :all, 
                             :include => [:board, :author],
                             :conditions => ["created_on >= ? and board_id in (?)",1.week.ago, boards], 
