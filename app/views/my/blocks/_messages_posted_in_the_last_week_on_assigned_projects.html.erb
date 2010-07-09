@@ -25,7 +25,7 @@
 		    <%= format_time(msg.updated_on)%>
 	    </td>
 			<td class="project">
-			  <%= link_to msg.project.name, :controller => 'project', :action => 'show', :id => msg.project %>
+			  <%= link_to msg.project.name, :controller => 'projects', :action => 'show', :id => msg.project %>
 			</td>
 			<td class="subject"><%= link_to msg.subject, "/boards/#{msg.board.id}/topics/#{msg.id}" %></td>
 			<td class="author"><%= msg.author.name %> </td>
