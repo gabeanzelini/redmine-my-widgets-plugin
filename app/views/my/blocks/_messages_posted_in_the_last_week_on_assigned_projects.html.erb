@@ -4,7 +4,7 @@
     end.reject{|ids| ids.nil? or ids.empty? }.join(",")
   @messages = Message.find( :all, 
                             :include => [:board, :author],
-                            :conditions => ["created_on >= ? and board_id in (?)",1.week.ago, boards], 
+                            :conditions => ["created_on >= ? and board_id in (#{boards})",1.week.ago], 
                             :order => 'updated_on DESC')
 %>
 <% if @messages and @messages.count > 0 %>
