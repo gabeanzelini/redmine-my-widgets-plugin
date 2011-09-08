@@ -1,0 +1,10 @@
+de:
+    label_recent_status_changes: "Die letzten Status Änderungen (innerhalb der letzten 24 Stunden)"
+    label_issue_status_old: "Alter Status"
+    label_assigned_issues_cloud: "Tag Cloud für zugewiesene Tickets"
+    label_project_issues_cloud: "Tag Cloud für das Projekt"
+    assigned_issues_cloud: "Tag Cloud für zugewiesene Tickets"
+    custom_queries: "Benutzerdefinierte Berichte"
+    open_versions: "Offene Versionen"
+    project_issues_cloud: "Tag Cloud für das Projekt"
+    recent_status_changes: "Die letzten Status Änderungen"
