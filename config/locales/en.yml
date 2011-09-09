@@ -4,7 +4,8 @@ en:
     assigned_issues_cloud: Assigned issues cloud
     project_issues_cloud: Project issues cloud
     custom_queries: "Custom queries"
-    user_queries: "User defined queries"
+    user_queries: "Issue status per user"
+    label_user_queries: "Issue status per user"
     open_versions: "Open versions"
     time_entry_overview: "Time report summary"
     label_time_entry_overview: "Time report summary"
